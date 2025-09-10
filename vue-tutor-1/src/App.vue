@@ -1,10 +1,18 @@
-<template>
-  <h1>Hello I am Sohan</h1>
-</template>
-
 <script>
+import Header from "@/components/Header.vue";
+
+export default {
+  components: {
+    Header
+  }
+};
 
 </script>
 
-<style>
-</style>
+<template>
+
+  <Header />
+
+</template>
+
+<style></style>
