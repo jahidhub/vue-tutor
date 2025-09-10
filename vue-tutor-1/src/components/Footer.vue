@@ -1,8 +1,7 @@
 <template>
-  <div class="container">
+  <div class="footer">
     <div class="nav">
       <ul>
-        <li>Home</li>
         <li>About</li>
         <li>Services</li>
         <li>Blog</li>
@@ -14,34 +13,36 @@
 
 <script>
 export default {
-  name: "Header",
+  name: "Footer",
 };
 </script>
 
 <style scoped>
-.nav {
-  background: #333;
-  padding: 15px 0;
+
+.footer {
+  background: #222; 
+  padding: 20px 0;
+  text-align: center;
 }
 
-.nav ul {
+.footer .nav ul {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   list-style: none;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
-.nav ul li {
-  margin: 0 20px;
-  color: #fff;
-  font-size: 20px;
-  font-weight: 500;
+.footer .nav ul li {
+  margin: 0 15px;
+  color: #ddd;
+  font-size: 15px;
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
-.nav ul li:hover {
-  color: #ff9800;
+.footer .nav ul li:hover {
+  color: #ff9800; 
 }
 </style>
