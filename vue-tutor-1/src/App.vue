@@ -1,12 +1,12 @@
 <script>
 import Header from "@/components/Header.vue";
-import Footer from "./components/Footer.vue";
-import Middle from "./components/Middle.vue";
+import Footer from "@/components/Footer.vue";
+import Counter from "@/components/Counter.vue";
 
 export default {
   components: {
     Header,
-    Middle,
+    Counter,
     Footer
   },
 };
@@ -14,12 +14,10 @@ export default {
 
 <template>
   <Header />
-  <Middle/>
+  <Counter/>
   <Footer/>
 </template>
 
 <style>
-* {
-  margin: 0;
-}
+
 </style>
