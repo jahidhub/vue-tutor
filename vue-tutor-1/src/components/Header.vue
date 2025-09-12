@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="w-full">
     <div class="nav">
       <ul>
         <li>Home</li>

@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <div class="footer w-full">
     <div class="nav">
       <ul>
         <li>About</li>
