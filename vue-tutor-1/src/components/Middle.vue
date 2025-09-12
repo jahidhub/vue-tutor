@@ -1,6 +1,10 @@
 <template>
   <div class="center">
-    <h1>Middle Section</h1>
+    <div class="d-flex">
+      <button>decrease</button>
+      <h2>Count</h2>
+      <button>increase</button>
+    </div>
   </div>
 </template>
 
