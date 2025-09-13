@@ -43,11 +43,9 @@ export default {
       }
       if ((this.count > 20)) {
         this.isButtonDisable= true
-        
       }
     },
     decrement() {
-
       this.count--;
 
       if (this.count > 5) {

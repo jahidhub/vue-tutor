@@ -2,11 +2,15 @@
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import Counter from "@/components/Counter.vue";
+import ReactivityFundamentals from "./components/ReactivityFundamentals.vue";
+import Computed from "./components/Computed.vue";
 
 export default {
   components: {
     Header,
     Counter,
+    ReactivityFundamentals,
+    Computed,
     Footer
   },
 };
@@ -15,6 +19,8 @@ export default {
 <template>
   <Header />
   <Counter/>
+  <ReactivityFundamentals/>
+<Computed/>
   <Footer/>
 </template>
 
