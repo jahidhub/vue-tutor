@@ -1,7 +1,4 @@
 
-
-
-
 <template>
   <div class="py-5">
     <h1 class="text-center" @click="increment">{{ count }}</h1>
