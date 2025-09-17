@@ -43,9 +43,27 @@
 
       <div id="Shopping Lists" class="flex justify-center bg-amber-100 p-5">
         <div class="shadow p-9 w-4xl bg-white text-left">
-          <h2 class="text-black text-4xl mb-4">{{ heading || "Welcome" }}</h2>
+          <div class="header flex justify-between">
+            <h2 class="text-black text-4xl mb-4">{{ heading || "Welcome" }}</h2>
+            <div class="btn">
+              <button
+                v-if="editing"
+                @click="doEdit(false)"
+                class="bg-teal-500 px-3 py-2 text-white me-3"
+              >
+                Cancle
+              </button>
+              <button
+                v-else
+                @click="doEdit(true)"
+                class="bg-teal-600 px-3 py-2 text-white"
+              >
+                Add New
+              </button>
+            </div>
+          </div>
 
-          <div class="add-item-form">
+          <div v-if="editing" class="add-item-form">
             <input
               @keyup.enter="saveItem"
               class="shadow p-3"
@@ -87,6 +105,7 @@ export default {
       toggle: true,
       name: "A",
       heading: "Shoping List",
+      editing: true,
       newItems: "",
       setPriority: false,
       items: [
@@ -106,6 +125,10 @@ export default {
     saveItem() {
       this.items.push({ id: this.items.length + 1, label: this.newItems });
       this.newItems = "";
+    },
+
+    doEdit(boolan) {
+      this.editing = boolan;
     },
   },
 };
