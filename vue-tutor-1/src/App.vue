@@ -17,7 +17,6 @@ export default {
   <Layout />
   <Footer />
 </template>
-
 <style>
 h1,
 h2,

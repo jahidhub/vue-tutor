@@ -1,14 +1,18 @@
 <script>
-import Counter from "@/components/Counter.vue";
-import ReactivityFundamentals from "@/components/ReactivityFundamentals.vue";
-import Computed from "@/components/Computed.vue";
-import ConditionalRendering from "@/components/ConditionalRendering.vue";
+// import Counter from "@/components/Counter.vue";
+// import ReactivityFundamentals from "@/components/ReactivityFundamentals.vue";
+// import Computed from "@/components/Computed.vue";
+// import ConditionalRendering from "@/components/ConditionalRendering.vue";
+// import EventHandling from "@/components/EventHandling.vue";
+import FormInputBindings from "@/components/FormInputBindings.vue";
 export default {
   components: {
-    Counter,
-    ReactivityFundamentals,
-    Computed,
-    ConditionalRendering
+    // Counter,
+    // ReactivityFundamentals,
+    // Computed,
+    // ConditionalRendering,
+    // EventHandling,
+    FormInputBindings,
   },
 };
 </script>
@@ -16,13 +20,14 @@ export default {
 <template>
   <div class="flex justify-center">
     <div class="container py-5">
-      <Counter />
+      <!-- <Counter />
       <ReactivityFundamentals />
       <Computed />
-      <ConditionalRendering/>
-
+      <ConditionalRendering />
+      <EventHandling /> -->
+      <FormInputBindings />
     </div>
   </div>
 </template>
 
-<style lang=""></style>
+<style></style>
