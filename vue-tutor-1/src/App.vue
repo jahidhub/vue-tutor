@@ -1,29 +1,24 @@
 <script>
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
-import Counter from "@/components/Counter.vue";
-import ReactivityFundamentals from "./components/ReactivityFundamentals.vue";
-import Computed from "./components/Computed.vue";
+import Watchers from "@/components/Watchers.vue";
+// import Computed from "@/components/Computed.vue";
 
 export default {
   components: {
     Header,
-    Counter,
-    ReactivityFundamentals,
-    Computed,
-    Footer
+    // Computed,
+    Watchers,
+    Footer,
   },
 };
 </script>
 
 <template>
   <Header />
-  <Counter/>
-  <ReactivityFundamentals/>
-<Computed/>
-  <Footer/>
+  <!-- <Computed /> -->
+   <Watchers/>
+  <Footer />
 </template>
 
-<style>
-
-</style>
+<style></style>
