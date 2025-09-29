@@ -21,7 +21,7 @@ export default {
 
 <template>
   <div class="flex justify-center">
-    <div class="container py-5">
+    <div class="container py-5 text-center">
       <!-- <Counter />
       <ReactivityFundamentals />
       <Computed />
