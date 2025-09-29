@@ -4,7 +4,8 @@
 // import Computed from "@/components/Computed.vue";
 // import ConditionalRendering from "@/components/ConditionalRendering.vue";
 // import EventHandling from "@/components/EventHandling.vue";
-import FormInputBindings from "@/components/FormInputBindings.vue";
+// import FormInputBindings from "@/components/FormInputBindings.vue";
+import Watchers from "@/components/Watchers.vue";
 export default {
   components: {
     // Counter,
@@ -12,7 +13,8 @@ export default {
     // Computed,
     // ConditionalRendering,
     // EventHandling,
-    FormInputBindings,
+    // FormInputBindings,
+    Watchers,
   },
 };
 </script>
@@ -25,7 +27,8 @@ export default {
       <Computed />
       <ConditionalRendering />
       <EventHandling /> -->
-      <FormInputBindings />
+      <!-- <FormInputBindings /> -->
+      <Watchers />
     </div>
   </div>
 </template>
