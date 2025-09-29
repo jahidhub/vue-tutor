@@ -1,20 +1,24 @@
 <template>
-  <div class="center">
-    <div class="flex justify-center py-5">
-      <div class="">
-        <button @click="decrement" 
-          class="uppercase bg-blue-400 text-xl px-3 py-2 text-white font-bold hover:bg-blue-700">
-          decrement
-        </button>
-      </div>
-      <h2 :class="countStyle" class="px-20 text-4xl font-bold">
-        {{ count }}
-      </h2>
-
-      <button :disabled="isButtonDisable" @click="increment" class="bg-teal-400 text-white uppercase hover:bg-teal-600 font-bold text-xl px-3 py-2">
-        Increment
+  <div class="flex justify-center">
+    <div class="">
+      <button
+        @click="decrement"
+        class="uppercase bg-blue-400 text-xl px-3 py-2 text-white font-bold hover:bg-blue-700"
+      >
+        decrement
       </button>
     </div>
+    <h2 :class="countStyle" class="px-20 text-4xl font-bold">
+      {{ count }}
+    </h2>
+
+    <button
+      :disabled="isButtonDisable"
+      @click="increment"
+      class="bg-teal-400 text-white uppercase hover:bg-teal-600 font-bold text-xl px-3 py-2"
+    >
+      Increment
+    </button>
   </div>
 </template>
 
@@ -24,7 +28,7 @@ export default {
     return {
       count: 0,
       countStyle: "normal",
-      isButtonDisable:false
+      isButtonDisable: false,
     };
   },
 
@@ -32,17 +36,15 @@ export default {
     increment() {
       this.count++;
 
-      
-      if ((this.count < 20)) {
-        this.isButtonDisable= false
-        
+      if (this.count < 20) {
+        this.isButtonDisable = false;
       }
 
       if (this.count > 10) {
         this.countStyle = "green";
       }
-      if ((this.count > 20)) {
-        this.isButtonDisable= true
+      if (this.count > 20) {
+        this.isButtonDisable = true;
       }
     },
     decrement() {
@@ -52,13 +54,9 @@ export default {
         this.countStyle = "success";
       }
 
-      if ((this.count < 5)) {
+      if (this.count < 5) {
         this.countStyle = "danger";
-        
       }
-
- 
-      
     },
   },
 
