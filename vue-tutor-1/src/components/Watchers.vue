@@ -14,10 +14,19 @@ export default {
   },
 
   watch: {
-    question(newValue) {
-      if (newValue.includes("?")) {
-        this.getAnswer();
-      }
+    // question(newValue) {
+    //   if (newValue.includes("?")) {
+    //     this.getAnswer();
+    //   }
+    // },
+
+    question: {
+      handler(newValue, oldValue) {
+        if (newValue.includes("?")) {
+          this.getAnswer();
+        }
+      },
+      deep: false,
     },
   },
 
