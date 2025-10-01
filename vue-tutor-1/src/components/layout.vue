@@ -1,11 +1,14 @@
 <script>
+import UseProps from "@/components/UseProps.vue";
+
 // import Counter from "@/components/Counter.vue";
 // import ReactivityFundamentals from "@/components/ReactivityFundamentals.vue";
 // import Computed from "@/components/Computed.vue";
 // import ConditionalRendering from "@/components/ConditionalRendering.vue";
 // import EventHandling from "@/components/EventHandling.vue";
 // import FormInputBindings from "@/components/FormInputBindings.vue";
-import Watchers from "@/components/Watchers.vue";
+// import Watchers from "@/components/Watchers.vue";
+
 export default {
   components: {
     // Counter,
@@ -14,7 +17,8 @@ export default {
     // ConditionalRendering,
     // EventHandling,
     // FormInputBindings,
-    Watchers,
+    // Watchers,
+    UseProps,
   },
 };
 </script>
@@ -28,7 +32,9 @@ export default {
       <ConditionalRendering />
       <EventHandling /> -->
       <!-- <FormInputBindings /> -->
-      <Watchers />
+      <!-- <Watchers /> -->
+
+      <UseProps title="It is Props" />
     </div>
   </div>
 </template>
