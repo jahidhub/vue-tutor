@@ -31,11 +31,36 @@ export default {
 
   methods: {
     addTask() {
-      this.todo.push({
-        // id: this.taskForm.id,
-        title: this.taskForm.title,
-        description: this.taskForm.description,
-      });
+      const lastId =
+        this.todo.length > 0 ? this.todo[this.todo.length - 1].id : 0;
+
+      const uniqueId = lastId + 1;
+      console.log(uniqueId);
+      if (
+        this.taskForm.title.length > 0 &&
+        this.taskForm.description.length > 0
+      ) {
+        this.todo.push({
+          id: uniqueId,
+          title: this.taskForm.title,
+          description: this.taskForm.description,
+        });
+        this.showModel = false;
+      } else {
+        alert("Field Fill Require");
+      }
+    },
+    openModel() {
+      this.showModel = true;
+      this.taskForm = {
+        title: "",
+        description: "",
+      };
+    },
+    removeTask(id) {
+      if (confirm("Are you sure you want to delete this task?")) {
+        this.todo = this.todo.filter((task) => task.id !== id);
+      }
     },
   },
 };
@@ -48,7 +73,7 @@ export default {
         <h2 class="text-2xl font-bold text-white uppercase">ToDo List</h2>
         <button
           class="bg-white px-3 text-xl rounded cursor-pointer"
-          @click="showModel = true"
+          @click="openModel"
         >
           Add
         </button>
@@ -58,14 +83,18 @@ export default {
 
   <div class="max-w-7xl my-5 mx-auto">
     <div class="card-wrapper gap-4 grid md:grid-cols-2 lg:grid-cols-3 mx-5">
-      <div class="card p-4 bg-indigo-500" v-for="task in todo">
-        <div class="card-head flex justify-between items-center">
-          <h4 class="w-2/3 wrap-break-word text-white text-lg font-bold">
+      <div class="card p-4 bg-teal-500" v-for="task in todo">
+        <h3 class="text-white bg-black px-3 py-1 rounded inline-block">
+          ID : {{ task.id }}
+        </h3>
+        <div class="card-head flex justify-between items-center mt-4">
+          <h4 class="w-2/3 wrap-break-word text-white text-lg font-bold capitalize">
             {{ task.title }}
           </h4>
           <div class="w-1/3 text-end">
             <button
-              class="bg-white px-3 text-xl rounded text-red-600 cursor-pointer"
+              class="bg-white px-3 text-sm rounded text-red-600 cursor-pointer"
+              @click="removeTask(task.id)"
             >
               remove
             </button>
@@ -101,7 +130,7 @@ export default {
           <div class="model-body pt-4 text-white flex flex-col">
             <label class="mb-3" for="title">Title</label>
             <input
-              class="px-3 py-1 border bg-indigo-500 text-white"
+              class="px-3 py-1 border bg-teal-500 text-white"
               type="text"
               id="title"
               v-model="taskForm.title"
@@ -109,7 +138,7 @@ export default {
             />
             <label class="mb-3 mt-5" for="description">Description</label>
             <textarea
-              class="px-3 py-1 border bg-indigo-500 text-white"
+              class="px-3 py-1 border bg-teal-500 text-white"
               type="text"
               id="description"
               v-model="taskForm.description"
@@ -136,4 +165,8 @@ export default {
   </div>
 </template>
 
-<style></style>
+<style>
+body {
+  background-color: #333;
+}
+</style>
