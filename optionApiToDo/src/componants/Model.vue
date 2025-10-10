@@ -1,6 +1,6 @@
 <script>
 export default {
-  emits: ["closeModel"],
+  emits: ["closeModel", "submit-form"],
   data() {
     return {
       taskForm: {
@@ -8,6 +8,13 @@ export default {
         description: "",
       },
     };
+  },
+
+  methods: {
+    submitForm() {
+      // console.log(this.taskForm);
+      this.$emit("submit-form",this.taskForm );
+    },
   },
 };
 </script>
@@ -57,7 +64,7 @@ export default {
             close
           </button>
           <button
-            @click="addTask"
+            @click="submitForm"
             class="bg-white px-3 text-lg rounded text-green-600 cursor-pointer"
           >
             add

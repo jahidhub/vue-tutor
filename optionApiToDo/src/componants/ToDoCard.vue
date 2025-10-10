@@ -3,6 +3,8 @@ export default {
   props: {
     task: Object,
   },
+
+  emits: ["remove-task"],
 };
 </script>
 
@@ -18,7 +20,7 @@ export default {
       <div class="w-1/3 text-end">
         <button
           class="bg-white px-3 text-sm rounded text-red-600 cursor-pointer"
-          @click="removeTask(task.id)"
+          @click="$emit('remove-task', task.id)"
         >
           remove
         </button>
