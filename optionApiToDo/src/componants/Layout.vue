@@ -1,7 +1,6 @@
 <script>
-import Model from "@/componants/Model.vue";
-import ToDoCard from "@/componants/ToDoCard.vue";
-
+import Model from "./Model.vue";
+import ToDoCard from "./ToDoCard.vue";
 export default {
   components: {
     Model,
@@ -27,13 +26,7 @@ export default {
           description: "lorem some",
         },
       ],
-
       showModel: false,
-
-      taskForm: {
-        title: "",
-        description: "",
-      },
     };
   },
 
@@ -58,13 +51,7 @@ export default {
         alert("Field Fill Require");
       }
     },
-    openModel() {
-      this.showModel = true;
-      this.taskForm = {
-        title: "",
-        description: "",
-      };
-    },
+
     removeTask(id) {
       if (confirm("Are you sure you want to delete this task?")) {
         this.todo = this.todo.filter((task) => task.id !== id);
@@ -79,10 +66,7 @@ export default {
     <div class="max-w-7xl mx-auto">
       <div class="nav flex justify-between item-center mx-5">
         <h2 class="text-2xl font-bold text-white uppercase">ToDo List</h2>
-        <button
-          class="bg-white px-3 text-xl rounded cursor-pointer"
-          @click="openModel"
-        >
+        <button class="bg-white px-3 text-xl rounded cursor-pointer" @click="showModel = true">
           Add
         </button>
       </div>
@@ -91,9 +75,9 @@ export default {
 
   <div class="max-w-7xl my-5 mx-auto">
     <div class="card-wrapper gap-4 grid md:grid-cols-2 lg:grid-cols-3 mx-5">
-      <ToDoCard />
+      <ToDoCard v-for="tasklist in todo" :task="tasklist" :key="tasklist.id"  />
     </div>
-    <Model />
+    <Model v-if="showModel" @closeModel="showModel = false" />
   </div>
 </template>
 
