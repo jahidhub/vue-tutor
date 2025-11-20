@@ -1,28 +1,27 @@
 <script>
-import Button from "./components/Button.vue";
+import Dynamic_components from "./components/Dynamic_components.vue";
+import Modal from "./components/Modal.vue";
 import Slot from "./components/Slot.vue";
 export default {
   components: {
-    Button,
     Slot,
+    Modal,
+    Dynamic_components
   },
-  data() {
-    return {
-      hello: "Hello world",
-    };
-  },
+  data() {},
 };
 </script>
 <template>
-  <!-- <Button>
-    <span>{{ hello }}</span>
-    <span style="color: red">Click me!</span>
-    <AwesomeIcon name="plus" />
-  </Button>
-
-
-  <button @click="hello= 'Bye Bye World'">click</button>  -->
-
-  <Slot />
+  <div class="container">
+    <!-- <Slot /> -->
+    <!-- <Modal /> -->
+    <Dynamic_components/>
+  </div>
 </template>
-<style scoped></style>
+<style>
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+}
+</style>
