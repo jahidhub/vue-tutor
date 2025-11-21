@@ -2,11 +2,13 @@
 import Dynamic_components from "./components/Dynamic_components.vue";
 import Modal from "./components/Modal.vue";
 import Slot from "./components/Slot.vue";
+import Vmodal from "./components/Vmodal.vue";
 export default {
   components: {
     Slot,
     Modal,
-    Dynamic_components
+    Dynamic_components,
+    Vmodal
   },
   data() {},
 };
@@ -15,7 +17,8 @@ export default {
   <div class="container">
     <!-- <Slot /> -->
     <!-- <Modal /> -->
-    <Dynamic_components/>
+    <!-- <Dynamic_components/> -->
+    <Vmodal/>
   </div>
 </template>
 <style>
